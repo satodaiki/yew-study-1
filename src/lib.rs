@@ -46,6 +46,7 @@ impl Component for Model {
                 <Button
                     label="testlabel"
                     value=1.0
+                    onclick=self.link.callback(|_| Msg::AddOne)
                 />
             </div>
         }

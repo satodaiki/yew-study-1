@@ -7,7 +7,7 @@ use yew::web_sys;
 pub struct Props {
     pub label: &'static str,
     pub value: f64,
-    // pub onchange: Callback<f64>,
+    pub onclick: Callback<MouseEvent>,
 }
 
 pub struct Button {
@@ -38,13 +38,14 @@ impl Component for Button {
     fn view(&self) -> Html {
         let Props {
             label,
-            value
+            value,
+            ref onclick
         } = self.props;
 
         html! {
             <>
                 <label>{ label }</label>
-                <button>{ value }</button>
+                <button onclick=onclick>{ value }</button>
             </>
         }
     }
